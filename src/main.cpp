@@ -30,12 +30,12 @@ namespace YimMenu
 {
 	DWORD Main(void*)
 	{
-		const auto documents = std::filesystem::path(std::getenv("appdata")) / "YimMenuV2";
+		const auto documents = std::filesystem::path(std::getenv("appdata")) / "domedV1";
 		FileMgr::Init(documents);
 
-		LogHelper::Init("YimMenuV2", FileMgr::GetProjectFile("./cout.log"));
+		LogHelper::Init("domedV1", FileMgr::GetProjectFile("./cout.log"));
 
-		LOGF(INFO, "Welcome to YimMenuV2! Build date: {} at {}", __DATE__, __TIME__);
+		LOGF(INFO, "domedV1 Build date: {} at {}", __DATE__, __TIME__);
 
 		g_HotkeySystem.RegisterCommands();
 		SavedLocations::FetchSavedLocations();
@@ -83,7 +83,7 @@ namespace YimMenu
 		if (!Pointers.LateInit())
 			LOG(WARNING) << "Socialclub patterns failed to load";
 
-		Notifications::Show("YimMenuV2", "Loaded succesfully", NotificationType::Success);
+		Notifications::Show("domedV1", "init success", NotificationType::Success);
 
 		if (InWine().value_or(false))
 		    LOG(INFO) << "Running in Wine!";

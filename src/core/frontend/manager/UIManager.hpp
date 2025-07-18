@@ -8,9 +8,7 @@ namespace YimMenu
 	// Enum to represent different UI themes, append when adding new themes
 	enum class UITheme
 	{
-		Classic = 0,
-		Modern,
-		ModernV,
+		Classic = 0
 	};
 
 	class UIManager

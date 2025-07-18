@@ -3,23 +3,6 @@
 #include "game/frontend/Menu.hpp"
 #include "core/commands/ListCommand.hpp"
 
-namespace YimMenu::Features
-{
-	static const std::vector<std::pair<int, const char*>> g_StyleOptions = {
-		{0, "Classic"},
-		{1, "Modern"},
-		{2, "Modern (Vertical)"},
-	};
-
-	// Expose as global reference so other code can use it
-	static ListCommand _StyleSelector{
-		"styleselector",
-		"UI Style",
-		"Choose the UI style",
-		g_StyleOptions,
-		0};
-}
-
 namespace YimMenu
 {
 	void UIManager::AddSubmenuImpl(const std::shared_ptr<Submenu>&& submenu)
@@ -37,24 +20,8 @@ namespace YimMenu
 
 	void UIManager::DrawImpl()
 	{
-		int selectedIndex = Features::_StyleSelector.GetState();
 
-		// Render the selected theme based on the index, append when adding new themes
-		switch (static_cast<UITheme>(selectedIndex))
-		{
-		case UITheme::Classic:
-			RenderClassicTheme();
-			break;
-		case UITheme::Modern:
-			RenderModernTheme();
-			break;
-		case UITheme::ModernV:
-			RenderModernVTheme();
-			break;
-		default:
-			RenderClassicTheme(); // Default theme
-			break;
-		}
+		RenderClassicTheme(); // Default theme	
 	}
 
 	std::shared_ptr<Submenu> UIManager::GetActiveSubmenuImpl()

@@ -312,7 +312,8 @@ struct BUSINESS_HUB_DATA
 {
 	SCR_INT Index;
 	SCR_INT TotalContraband;     // not read by the scripts
-	SCR_INT ProducingBusinesses; // bitset
+	SCR_INT Producing
+		; // bitset
 	SCR_INT ProducingFactories;  // bitset
 	SCR_INT Upgrades;
 	SCR_INT PAD_0005;

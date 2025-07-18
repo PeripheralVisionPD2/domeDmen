@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20.x)
 
 include(cmake/cross-compile.cmake)
 
-project(YimMenuV2 VERSION 0.0.1 DESCRIPTION "A new base using new C++ features optimised for speed and ease of use")
+project(domeDmenu VERSION 0.0.1 DESCRIPTION "")
 
 # libs
 include(cmake/async-logger.cmake)
