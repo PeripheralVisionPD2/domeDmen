@@ -25,6 +25,7 @@ namespace YimMenu::Submenus
 		generalGroup->AddItem(std::make_shared<ListCommandItem>("businesssafe"_J));
 		generalGroup->AddItem(std::make_shared<CommandItem>("claimsafeearnings"_J));
 		generalGroup->AddItem(std::make_shared<CommandItem>("resetheat"_J));
+		generalGroup->AddItem(std::make_shared<CommandItem>("resetpopularity"_J));
 		
 		cargGroup->AddItem(std::make_shared<ListCommandItem>("warehousechoice"_J));
 		cargGroup->AddItem(std::make_shared<CommandItem>("addwarehousecargo"_J));
